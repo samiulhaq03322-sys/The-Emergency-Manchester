@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Emergency Manchester Plumbers | 24/7 Local Service</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --deep-blue: #0A1F44;
+            --bright-red: #E10600;
+            --light-grey: #F5F5F5;
+            --white: #FFFFFF;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--light-grey);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--bright-red);
+            color: white;
+            padding: 8px 0;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--deep-blue);
+            transition: var(--transition);
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            color: var(--white) !important;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,0.8) !important;
+            font-weight: 600;
+            margin-left: 20px;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--bright-red) !important;
+        }
+
+        .sticky-top {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(10, 31, 68, 0.7), rgba(10, 31, 68, 0.7)), url('https://images.unsplash.com/photo-1581244277943-fe4a9c777189?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .btn-emergency {
+            background-color: var(--bright-red);
+            color: white;
+            padding: 15px 40px;
+            font-weight: 900;
+            border-radius: 50px;
+            text-transform: uppercase;
+            border: none;
+            box-shadow: 0 4px 15px rgba(225, 6, 0, 0.4);
+            animation: slideInLeft 1.2s ease-out;
+            transition: var(--transition);
+        }
+
+        .btn-emergency:hover {
+            transform: scale(1.05);
+            background-color: #b30500;
+            color: white;
+        }
+
+        /* Carousel Styling */
+        .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .carousel-caption {
+            background: rgba(10, 31, 68, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        /* Service Cards */
+        .service-card {
+            background: white;
+            border: none;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--bright-red);
+            margin-bottom: 20px;
+        }
+
+        /* Why Choose Us */
+        .why-us-section {
+            background-color: var(--white);
+            padding: 80px 0;
+        }
+
+        .feature-icon-box {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon-box i {
+            font-size: 2.5rem;
+            color: var(--deep-blue);
+            margin-bottom: 15px;
+            transition: var(--transition);
+        }
+
+        .feature-icon-box:hover i {
+            color: var(--bright-red);
+            transform: rotateY(360deg);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--bright-red);
+            color: white;
+            padding: 60px 0;
+        }
+
+        .btn-white {
+            background-color: white;
+            color: var(--bright-red);
+            padding: 15px 40px;
+            font-weight: 900;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .btn-white:hover {
+            background-color: var(--deep-blue);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--deep-blue);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-link {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-link:hover {
+            color: var(--bright-red);
+            padding-left: 5px;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Gallery */
+        .gallery-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .gallery-img:hover {
+            filter: brightness(70%);
+        }
+
+        /* Page Management */
+        .page-content {
+            display: none;
+        }
+
+        .page-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1️⃣ Top Bar -->
+    <div class="top-bar">
+        <div class="container d-flex justify-content-between align-items-center">
+            <span><i class="fas fa-clock me-2"></i> 24/7 Emergency Plumbing Service</span>
+            <a href="tel:01614100839" class="text-white text-decoration-none">
+                <i class="fas fa-phone-alt me-2"></i> 0161 410 0839
+            </a>
+        </div>
+    </div>
+
+    <!-- 2️⃣ Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#" onclick="showPage('home')">
+                <i class="fas fa-tools me-2 text-danger"></i>
+                <span>THE EMERGENCY <br><small style="font-size: 0.7rem; letter-spacing: 2px;">MANCHESTER PLUMBERS</small></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('home')">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('about')">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('services')">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('emergency')">Emergency</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('gallery')">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="showPage('contact')">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 🏠 HOME PAGE -->
+    <div id="home" class="page-content active">
+        <!-- 3️⃣ Hero Section -->
+        <section class="hero-section">
+            <div class="container hero-content">
+                <h1>24/7 Emergency Plumbers <br>in Manchester</h1>
+                <p>Fast, Reliable & Professional Plumbing Services. Arriving in 30-60 Minutes!</p>
+                <a href="tel:01614100839" class="btn btn-emergency btn-lg">
+                    <i class="fas fa-phone-alt me-2"></i> CALL NOW: 0161 410 0839
+                </a>
+            </div>
+        </section>
+
+        <!-- 4️⃣ Carousel Section -->
+        <section class="py-5 bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="text-dark">Our Professional Expertise</h2>
+                    <div class="mx-auto bg-danger" style="height: 3px; width: 60px;"></div>
+                </div>
+                <div id="plumbingCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#plumbingCarousel" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#plumbingCarousel" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#plumbingCarousel" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#plumbingCarousel" data-bs-slide-to="3"></button>
+                        <button type="button" data-bs-target="#plumbingCarousel" data-bs-slide-to="4"></button>
+                        <button type="button" data-bs-target="#plumbingCarousel" data-bs-slide-to="5"></button>
+                    </div>
+                    <div class="carousel-inner rounded shadow-lg">
+                        <div class="carousel-item active">
+                            <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Emergency repair">
+                            <div class="carousel-caption">
+                                <h3>Emergency Repairs</h3>
+                                <p>On-site within the hour for urgent plumbing failures.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://images.unsplash.com/photo-1621905252507-b354bcadcabc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Burst pipe">
+                            <div class="carousel-caption">
+                                <h3>Burst Pipe Solutions</h3>
+                                <p>Preventing water damage with rapid response leak sealing.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Blocked drain">
+                            <div class="carousel-caption">
+                                <h3>Blocked Drains</h3>
+                                <p>High-pressure water jetting to clear the most stubborn clogs.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Bathroom repair">
+                            <div class="carousel-caption">
+                                <h3>Bathroom Services</h3>
+                                <p>Expert installation and repair for sinks, toilets, and showers.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Kitchen plumbing">
+                            <div class="carousel-caption">
+                                <h3>Kitchen Installations</h3>
+                                <p>Appliance plumbing and leak-proof sink fitting.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://images.unsplash.com/photo-1610427845353-8106757b3f94?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Commercial plumbing">
+                            <div class="carousel-caption">
+                                <h3>Commercial Contracts</h3>
+                                <p>Reliable plumbing maintenance for Manchester businesses.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#plumbingCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#plumbingCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5️⃣ Services Preview -->
+        <section class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="text-dark">Our Core Services</h2>
+                    <p class="text-muted">Available 24 hours a day, 7 days a week.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                            <h4>Emergency Repairs</h4>
+                            <p>Immediate response for any plumbing catastrophe in the Greater Manchester area.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fas fa-tint-slash"></i></div>
+                            <h4>Burst Pipes</h4>
+                            <p>Rapid leak detection and pipe replacement to protect your property from floods.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fas fa-faucet"></i></div>
+                            <h4>Blocked Drains</h4>
+                            <p>Professional drain unblocking for kitchens, bathrooms, and external pipes.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fas fa-burn"></i></div>
+                            <h4>Boiler Issues</h4>
+                            <p>Gas Safe registered engineers to handle breakdown and heating failures.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fas fa-search"></i></div>
+                            <h4>Leak Detection</h4>
+                            <p>Non-invasive thermal imaging and acoustic detection to find hidden leaks.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fas fa-toilet"></i></div>
+                            <h4>Toilet Repairs</h4>
+                            <p>Fixing overflows, flush mechanisms, and major blockages instantly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6️⃣ Why Choose Us -->
+        <section class="why-us-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4">
+                        <h2 class="mb-4">Why Manchester Trusts Us</h2>
+                        <p class="lead">With over 15 years of experience serving the local community, we pride ourselves on being the first choice for emergency plumbing.</p>
+                        <ul class="list-unstyled mt-4">
+                            <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-danger me-3 fs-4"></i> No Call-Out Charges During Business Hours</li>
+                            <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-danger me-3 fs-4"></i> Fully Insured & Guaranteed Work</li>
+                            <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-danger me-3 fs-4"></i> Local Manchester-Based Engineers</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-6 feature-icon-box">
+                                <i class="fas fa-history"></i>
+                                <h5>24/7 Availability</h5>
+                            </div>
+                            <div class="col-6 feature-icon-box">
+                                <i class="fas fa-bolt"></i>
+                                <h5>Fast Response</h5>
+                            </div>
+                            <div class="col-6 feature-icon-box mt-4">
+                                <i class="fas fa-user-shield"></i>
+                                <h5>Qualified Engineers</h5>
+                            </div>
+                            <div class="col-6 feature-icon-box mt-4">
+                                <i class="fas fa-pound-sign"></i>
+                                <h5>Transparent Pricing</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 📄 ABOUT PAGE -->
+    <div id="about" class="page-content">
+        <section class="py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <img src="https://images.unsplash.com/photo-1581578731522-7945c074b532?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="img-fluid rounded shadow" alt="About our team">
+                    </div>
+                    <div class="col-md-6">
+                        <h2 class="mb-4">Our Manchester Legacy</h2>
+                        <p>Founded in the heart of Manchester, <strong>The Emergency Manchester Plumbers</strong> has grown from a single van operation to one of the city's most respected emergency response teams. We understand that plumbing disasters don't wait for office hours.</p>
+                        <p>Our mission is simple: To provide the citizens of Manchester with reliable, honest, and expert plumbing services whenever they need it most. Every engineer on our team is fully vetted, highly trained, and committed to leaving your home exactly as they found it—just with better plumbing!</p>
+                        <div class="bg-light p-4 rounded mt-4 border-start border-danger border-5">
+                            <p class="mb-0 italic">"Excellent service from start to finish. Arrived in 20 minutes for a burst pipe and saved my kitchen carpet!" - <strong>Sarah, Didsbury</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 📄 SERVICES PAGE -->
+    <div id="services" class="page-content">
+        <section class="py-5">
+            <div class="container text-center">
+                <h2 class="mb-5">Comprehensive Plumbing Solutions</h2>
+                <div class="row g-4 text-start">
+                    <div class="col-md-6">
+                        <div class="p-4 bg-white rounded shadow-sm">
+                            <h4 class="text-danger"><i class="fas fa-home me-2"></i> Residential Plumbing</h4>
+                            <p>From leaking taps to full bathroom installations, we handle every aspect of home plumbing. We use the latest technology to ensure long-lasting repairs.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-4 bg-white rounded shadow-sm">
+                            <h4 class="text-danger"><i class="fas fa-building me-2"></i> Commercial Plumbing</h4>
+                            <p>We partner with Manchester restaurants, offices, and landlords to provide scheduled maintenance and priority emergency call-outs.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-4 bg-white rounded shadow-sm">
+                            <h4 class="text-danger"><i class="fas fa-thermometer-half me-2"></i> Heating & Boilers</h4>
+                            <p>Boiler repairs, radiator bleeding, and central heating flushes to keep your Manchester home warm during the cold winter months.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-4 bg-white rounded shadow-sm">
+                            <h4 class="text-danger"><i class="fas fa-water me-2"></i> Drainage Services</h4>
+                            <p>Specialist equipment for CCTV drain surveys and heavy-duty unblocking of main sewer lines and gutters.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 📄 EMERGENCY PAGE -->
+    <div id="emergency" class="page-content">
+        <section class="py-5 bg-dark text-white">
+            <div class="container text-center py-5">
+                <div class="mb-4">
+                    <i class="fas fa-ambulance text-danger" style="font-size: 5rem;"></i>
+                </div>
+                <h2 class="display-4 fw-bold mb-3">24/7 RAPID RESPONSE</h2>
+                <p class="lead mb-5">Don't wait. A small leak can become a major flood in minutes. Our emergency dispatch team is standing by right now.</p>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card bg-danger text-white p-4">
+                            <h3>Emergency Hotline</h3>
+                            <a href="tel:01614100839" class="display-5 text-white text-decoration-none fw-bold">0161 410 0839</a>
+                            <p class="mt-3">Average Arrival Time: <strong>42 Minutes</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 📄 GALLERY PAGE -->
+    <div id="gallery" class="page-content">
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Our Work in Action</h2>
+                <div class="row g-3">
+                    <div class="col-md-4"><img src="https://images.unsplash.com/photo-1621905252507-b354bcadcabc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="gallery-img"></div>
+                    <div class="col-md-4"><img src="https://images.unsplash.com/photo-1584622781564-1d9876a13d00?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="gallery-img"></div>
+                    <div class="col-md-4"><img src="https://images.unsplash.com/photo-1542013936693-884638332954?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="gallery-img"></div>
+                    <div class="col-md-4"><img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="gallery-img"></div>
+                    <div class="col-md-4"><img src="https://images.unsplash.com/photo-1595111242333-e00994f86641?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="gallery-img"></div>
+                    <div class="col-md-4"><img src="https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="gallery-img"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 📄 CONTACT PAGE -->
+    <div id="contact" class="page-content">
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 mb-4">
+                        <h2 class="mb-4">Get In Touch</h2>
+                        <div class="d-flex mb-3">
+                            <i class="fas fa-map-marker-alt text-danger me-3 fs-4"></i>
+                            <p>Spinningfields, Deansgate<br>Manchester, M3 3EB</p>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <i class="fas fa-envelope text-danger me-3 fs-4"></i>
+                            <p>support@emergencyplumbersmanchester.co.uk</p>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <i class="fas fa-phone-alt text-danger me-3 fs-4"></i>
+                            <p>0161 410 0839</p>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <form class="contact-form" id="mainContactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter your name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" placeholder="Enter phone number" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-control" placeholder="Enter email">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Urgency Level</label>
+                                <select class="form-select">
+                                    <option>Emergency (Immediate help)</option>
+                                    <option>Urgent (Within 24 hours)</option>
+                                    <option>Routine Quote</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Your Message</label>
+                                <textarea class="form-control" rows="4" placeholder="Describe your plumbing issue"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-emergency w-100">SEND REQUEST</button>
+                        </form>
+                        <div id="formSuccess" class="alert alert-success mt-3 d-none">
+                            Thank you! Your message has been sent. Our team will call you shortly.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 7️⃣ Call To Action -->
+    <section class="cta-section text-center">
+        <div class="container">
+            <h2 class="mb-4">Plumbing Emergency? Call Us Now!</h2>
+            <a href="tel:01614100839" class="btn btn-white btn-lg">
+                <i class="fas fa-phone-alt me-2"></i> CLICK TO CALL: 0161 410 0839
+            </a>
+        </div>
+    </section>
+
+    <!-- 8️⃣ Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-4">Emergency Manchester Plumbers</h5>
+                    <p class="text-secondary">Providing the fastest plumbing emergency response in the Greater Manchester area. Fully qualified, insured, and ready 24/7.</p>
+                    <div class="mt-4">
+                        <a href="#" class="text-white me-3 fs-5"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white me-3 fs-5"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3 fs-5"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link" onclick="showPage('home')">Home</a></li>
+                        <li><a href="#" class="footer-link" onclick="showPage('about')">About Us</a></li>
+                        <li><a href="#" class="footer-link" onclick="showPage('services')">Our Services</a></li>
+                        <li><a href="#" class="footer-link" onclick="showPage('emergency')">Emergency Help</a></li>
+                        <li><a href="#" class="footer-link" onclick="showPage('contact')">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-4">Contact Info</h5>
+                    <p><i class="fas fa-phone-alt text-danger me-2"></i> 0161 410 0839</p>
+                    <p><i class="fas fa-envelope text-danger me-2"></i> help@mcrplumbing.uk</p>
+                    <p><i class="fas fa-map-marker-alt text-danger me-2"></i> Spinningfields, Manchester</p>
+                </div>
+            </div>
+            <hr class="mt-4 border-secondary">
+            <div class="text-center pt-3">
+                <p class="mb-0 text-secondary">&copy; 2024 The Emergency Manchester Plumbers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Page Switching Logic
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            const selectedPage = document.getElementById(pageId);
+            if(selectedPage) {
+                selectedPage.classList.add('active');
+            }
+            
+            // Update Navigation active state
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('onclick').includes(pageId)) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Close mobile menu if open
+            const navbarCollapse = document.getElementById('navbarNav');
+            if (navbarCollapse.classList.contains('show')) {
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                bsCollapse.hide();
+            }
+        }
+
+        // Contact Form Handling
+        document.getElementById('mainContactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.classList.add('d-none');
+            document.getElementById('formSuccess').classList.remove('d-none');
+        });
+
+        // Sticky Navbar Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = "5px 0";
+            } else {
+                navbar.style.padding = "15px 0";
+            }
+        });
+    </script>
+</body>
+</html>
